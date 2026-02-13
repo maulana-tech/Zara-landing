@@ -29,5 +29,62 @@ const {
   </head>
   <body>
     <slot />
+
+    <script>
+      import Lenis from 'lenis';
+
+      // Skip smooth scroll if user prefers reduced motion
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (!prefersReducedMotion) {
+        const lenis = new Lenis({
+          lerp: 0.1,
+          wheelMultiplier: 1,
+          touchMultiplier: 1.5,
+          autoRaf: true,
+        });
+
+        // Event delegation for anchor clicks (single listener instead of N)
+        document.addEventListener('click', (e) => {
+          const anchor = (e.target as HTMLElement).closest('a[href^="#"]');
+          if (!anchor) return;
+          e.preventDefault();
+          const href = anchor.getAttribute('href');
+          if (!href) return;
+          const target = document.querySelector(href);
+          if (target) {
+            lenis.scrollTo(target as HTMLElement, { offset: -64 });
+          }
+        });
+
+        // Pause RAF when tab is hidden to save CPU
+        document.addEventListener('visibilitychange', () => {
+          if (document.hidden) {
+            lenis.stop();
+          } else {
+            lenis.start();
+          }
+        });
+      }
+    </script>
   </body>
 </html>
+
+<style is:global>
+  /* Lenis base styles */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+</style>
