@@ -7,32 +7,141 @@ import { DASHBOARD_URL } from '../data/site-data';
   <div class="hero-grid"></div>
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+
+  <!-- Floating particles -->
+  <div class="particles">
+    <div class="particle" style="top:15%;left:10%;animation-delay:0s;"></div>
+    <div class="particle" style="top:25%;left:85%;animation-delay:1.5s;"></div>
+    <div class="particle" style="top:65%;left:15%;animation-delay:3s;"></div>
+    <div class="particle" style="top:70%;left:90%;animation-delay:0.8s;"></div>
+    <div class="particle" style="top:40%;left:5%;animation-delay:2.2s;"></div>
+    <div class="particle" style="top:80%;left:75%;animation-delay:4s;"></div>
+    <div class="particle" style="top:10%;left:60%;animation-delay:1s;"></div>
+    <div class="particle" style="top:55%;left:92%;animation-delay:2.5s;"></div>
+  </div>
 
   <div class="container hero-content">
-    <div class="hero-badge">
-      <div class="hero-badge-dot"></div>
-      Live on BNB Chain
-    </div>
+    <!-- Left-aligned text content -->
+    <div class="hero-layout">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <div class="hero-badge-dot"></div>
+          Live on BNB Chain
+        </div>
 
-    <h1>
-      Self-Driving<br />
-      <span class="gradient-text">Yield Engine</span>
-    </h1>
+        <h1>
+          Self-Driving<br />
+          <span class="gradient-text">Yield Engine</span>
+        </h1>
 
-    <p class="hero-subtitle">
-      Zero-Knowledge Machine Learning meets Multi-Agent Architecture.
-      Autonomous yield optimization that's 100% on-chain, non-custodial, and verifiable.
-    </p>
+        <p class="hero-subtitle">
+          Zero-Knowledge Machine Learning meets Multi-Agent Architecture.
+          Autonomous yield optimization that's 100% on-chain, non-custodial, and verifiable.
+        </p>
 
-    <p class="hero-tagline">// Powered by ZKML + Halo2 on BNB Chain</p>
+        <p class="hero-tagline">// Powered by ZKML + Halo2 on BNB Chain</p>
 
-    <div class="hero-actions">
-      <a href={DASHBOARD_URL} class="btn-launch-lg">
-        Launch App →
-      </a>
-      <a href="#how-it-works" class="btn-secondary">
-        Learn More ↓
-      </a>
+        <div class="hero-actions">
+          <a href={DASHBOARD_URL} class="btn-launch-lg">
+            Launch App →
+          </a>
+          <a href="#how-it-works" class="btn-secondary">
+            Learn More ↓
+          </a>
+        </div>
+
+        <!-- Mini trust badges -->
+        <div class="hero-trust">
+          <div class="trust-item">
+            <span class="trust-icon">&#9670;</span>
+            Non-Custodial
+          </div>
+          <div class="trust-sep"></div>
+          <div class="trust-item">
+            <span class="trust-icon">&#9670;</span>
+            ZK-Verified
+          </div>
+          <div class="trust-sep"></div>
+          <div class="trust-item">
+            <span class="trust-icon">&#9670;</span>
+            100% On-Chain
+          </div>
+        </div>
+      </div>
+
+      <!-- Terminal / Live Feed preview -->
+      <div class="hero-visual">
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="terminal-dot td-r"></span>
+              <span class="terminal-dot td-y"></span>
+              <span class="terminal-dot td-g"></span>
+            </div>
+            <span class="terminal-title">zara-agent-orchestrator</span>
+            <div class="terminal-status">
+              <div class="terminal-status-dot"></div>
+              LIVE
+            </div>
+          </div>
+          <div class="terminal-body" id="terminal-body">
+            <div class="terminal-line tl-fade-1">
+              <span class="t-time">11:31:02</span>
+              <span class="t-tag t-tag-info">ORCHESTRATOR</span>
+              <span class="t-msg">Cycle #1,247 initiated</span>
+            </div>
+            <div class="terminal-line tl-fade-2">
+              <span class="t-time">11:31:03</span>
+              <span class="t-tag t-tag-blue">MARKET</span>
+              <span class="t-msg">BNB sentiment: +0.75 | Whales: Accumulating</span>
+            </div>
+            <div class="terminal-line tl-fade-3">
+              <span class="t-time">11:31:04</span>
+              <span class="t-tag t-tag-blue">MARKET</span>
+              <span class="t-msg">ZK proof generated (Halo2) ... verified</span>
+            </div>
+            <div class="terminal-line tl-fade-4">
+              <span class="t-time">11:31:05</span>
+              <span class="t-tag t-tag-yellow">RISK</span>
+              <span class="t-msg">Score: 42/100 | Hedge ratio: 65%</span>
+            </div>
+            <div class="terminal-line tl-fade-5">
+              <span class="t-time">11:31:06</span>
+              <span class="t-tag t-tag-green">EXEC</span>
+              <span class="t-msg">Rebalance: USDT → AsterDEX Earn (+ 2.3% APY)</span>
+            </div>
+            <div class="terminal-line tl-fade-6">
+              <span class="t-time">11:31:06</span>
+              <span class="t-tag t-tag-green">EXEC</span>
+              <span class="t-msg">MEV protection: applied | Gas saved: 72%</span>
+            </div>
+            <div class="terminal-line tl-fade-7">
+              <span class="t-time">11:31:07</span>
+              <span class="t-tag t-tag-info">ORCHESTRATOR</span>
+              <span class="t-msg">Cycle #1,247 complete. Next: 60s</span>
+            </div>
+            <div class="terminal-line terminal-cursor tl-fade-8">
+              <span class="t-time">11:31:08</span>
+              <span class="t-blink">_</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating metrics around terminal -->
+        <div class="float-card fc-1">
+          <div class="fc-label">Current APY</div>
+          <div class="fc-value fc-green">18.7%</div>
+        </div>
+        <div class="float-card fc-2">
+          <div class="fc-label">Risk Score</div>
+          <div class="fc-value fc-gold">42/100</div>
+        </div>
+        <div class="float-card fc-3">
+          <div class="fc-label">TVL</div>
+          <div class="fc-value">$156.8K</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -40,9 +149,11 @@ import { DASHBOARD_URL } from '../data/site-data';
 <style>
   .hero {
     position: relative;
-    padding: 160px 0 100px;
-    text-align: center;
+    padding: 140px 0 80px;
     overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
   }
 
   .hero-bg {
@@ -69,6 +180,19 @@ import { DASHBOARD_URL } from '../data/site-data';
   .hero-content {
     position: relative;
     z-index: 1;
+    width: 100%;
+  }
+
+  /* Two-column layout */
+  .hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .hero-text {
+    text-align: left;
   }
 
   .hero-badge {
@@ -81,7 +205,7 @@ import { DASHBOARD_URL } from '../data/site-data';
     font-size: 12px;
     font-weight: 600;
     color: var(--gold-light);
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
   }
@@ -95,18 +219,18 @@ import { DASHBOARD_URL } from '../data/site-data';
   }
 
   .hero h1 {
-    font-size: clamp(40px, 6vw, 72px);
+    font-size: clamp(36px, 5vw, 64px);
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 1.08;
     letter-spacing: -2px;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
   }
 
   .hero-subtitle {
-    font-size: clamp(16px, 2vw, 20px);
+    font-size: clamp(15px, 1.5vw, 18px);
     color: var(--text-secondary);
-    max-width: 640px;
-    margin: 0 auto 16px;
+    max-width: 480px;
+    margin-bottom: 12px;
     line-height: 1.6;
     font-weight: 400;
   }
@@ -115,17 +239,45 @@ import { DASHBOARD_URL } from '../data/site-data';
     font-family: var(--font-mono);
     font-size: 13px;
     color: var(--text-tertiary);
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
 
   .hero-actions {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
+    margin-bottom: 32px;
   }
 
+  /* Trust badges */
+  .hero-trust {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-tertiary);
+    font-weight: 500;
+  }
+
+  .trust-icon {
+    color: var(--gold);
+    font-size: 6px;
+  }
+
+  .trust-sep {
+    width: 1px;
+    height: 14px;
+    background: var(--border-strong);
+  }
+
+  /* Orbs */
   .hero-orb {
     position: absolute;
     border-radius: 50%;
@@ -151,8 +303,291 @@ import { DASHBOARD_URL } from '../data/site-data';
     animation: floatOrb 20s ease-in-out infinite reverse;
   }
 
+  .hero-orb-3 {
+    width: 250px;
+    height: 250px;
+    background: rgba(232, 200, 136, 0.04);
+    top: 50%;
+    left: 45%;
+    animation: floatOrb 18s ease-in-out infinite 3s;
+  }
+
+  /* Particles */
+  .particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0;
+    animation: particleDrift 6s ease-in-out infinite;
+  }
+
+  @keyframes particleDrift {
+    0% { opacity: 0; transform: translateY(0) scale(1); }
+    20% { opacity: 0.6; }
+    80% { opacity: 0.3; }
+    100% { opacity: 0; transform: translateY(-60px) scale(0.5); }
+  }
+
+  /* ===== TERMINAL ===== */
+  .hero-visual {
+    position: relative;
+  }
+
+  .terminal-window {
+    background: #0C0C12;
+    border: 2px solid var(--border-strong);
+    box-shadow: 8px 8px 0px #000, 0 0 60px rgba(212, 167, 106, 0.04);
+    overflow: hidden;
+  }
+
+  .terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+  }
+
+  .terminal-dots {
+    display: flex;
+    gap: 6px;
+  }
+
+  .terminal-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .td-r { background: #FF5F57; }
+  .td-y { background: #FEBC2E; }
+  .td-g { background: #28C840; }
+
+  .terminal-title {
+    flex: 1;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-tertiary);
+    text-align: center;
+  }
+
+  .terminal-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--green);
+    letter-spacing: 1.5px;
+  }
+
+  .terminal-status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulseDot 2s ease-in-out infinite;
+  }
+
+  .terminal-body {
+    padding: 16px;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .terminal-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    line-height: 1.7;
+    opacity: 0;
+    animation: termFadeIn 0.4s ease forwards;
+  }
+
+  .tl-fade-1 { animation-delay: 0.2s; }
+  .tl-fade-2 { animation-delay: 0.6s; }
+  .tl-fade-3 { animation-delay: 1.0s; }
+  .tl-fade-4 { animation-delay: 1.5s; }
+  .tl-fade-5 { animation-delay: 2.0s; }
+  .tl-fade-6 { animation-delay: 2.4s; }
+  .tl-fade-7 { animation-delay: 3.0s; }
+  .tl-fade-8 { animation-delay: 3.5s; }
+
+  @keyframes termFadeIn {
+    0% { opacity: 0; transform: translateY(4px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .t-time {
+    color: var(--text-disabled);
+    font-size: 10px;
+    flex-shrink: 0;
+    width: 56px;
+  }
+
+  .t-tag {
+    padding: 1px 8px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+    text-transform: uppercase;
+  }
+
+  .t-tag-info {
+    background: rgba(212, 167, 106, 0.15);
+    color: var(--gold-light);
+    border: 1px solid rgba(212, 167, 106, 0.25);
+  }
+
+  .t-tag-blue {
+    background: rgba(100, 150, 255, 0.12);
+    color: #8AB4FF;
+    border: 1px solid rgba(100, 150, 255, 0.2);
+  }
+
+  .t-tag-yellow {
+    background: rgba(255, 184, 0, 0.12);
+    color: var(--yellow);
+    border: 1px solid rgba(255, 184, 0, 0.2);
+  }
+
+  .t-tag-green {
+    background: rgba(0, 208, 132, 0.12);
+    color: var(--green);
+    border: 1px solid rgba(0, 208, 132, 0.2);
+  }
+
+  .t-msg {
+    color: var(--text-secondary);
+  }
+
+  .t-blink {
+    color: var(--gold);
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* ===== FLOATING CARDS ===== */
+  .float-card {
+    position: absolute;
+    background: var(--bg-surface);
+    border: 2px solid var(--border-strong);
+    padding: 12px 18px;
+    box-shadow: 4px 4px 0px #000;
+    z-index: 2;
+    animation: floatCard 6s ease-in-out infinite;
+  }
+
+  .fc-label {
+    font-size: 9px;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+
+  .fc-value {
+    font-family: var(--font-mono);
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+  }
+
+  .fc-green { color: var(--green); }
+  .fc-gold { color: var(--gold-light); }
+
+  .fc-1 {
+    top: -16px;
+    right: -20px;
+    animation-delay: 0s;
+  }
+
+  .fc-2 {
+    bottom: 40px;
+    left: -30px;
+    animation-delay: 2s;
+  }
+
+  .fc-3 {
+    bottom: -10px;
+    right: 30px;
+    animation-delay: 4s;
+  }
+
+  @keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .hero-layout {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .hero-text {
+      text-align: center;
+    }
+
+    .hero-actions {
+      justify-content: center;
+    }
+
+    .hero-trust {
+      justify-content: center;
+    }
+
+    .float-card { display: none; }
+  }
+
   @media (max-width: 640px) {
-    .hero { padding: 120px 0 60px; }
-    .hero-actions { flex-direction: column; align-items: stretch; }
+    .hero {
+      padding: 120px 0 60px;
+      min-height: auto;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .hero-trust {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .trust-sep { display: none; }
+
+    .terminal-body {
+      min-height: 200px;
+    }
+
+    .terminal-line {
+      font-size: 10px;
+    }
+
+    .t-time { display: none; }
   }
 </style>
