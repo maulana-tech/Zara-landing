@@ -1,0 +1,158 @@
+---
+import { DASHBOARD_URL } from '../data/site-data';
+---
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="container hero-content">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      Live on BNB Chain
+    </div>
+
+    <h1>
+      Self-Driving<br />
+      <span class="gradient-text">Yield Engine</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Zero-Knowledge Machine Learning meets Multi-Agent Architecture.
+      Autonomous yield optimization that's 100% on-chain, non-custodial, and verifiable.
+    </p>
+
+    <p class="hero-tagline">// Powered by ZKML + Halo2 on BNB Chain</p>
+
+    <div class="hero-actions">
+      <a href={DASHBOARD_URL} class="btn-launch-lg">
+        Launch App →
+      </a>
+      <a href="#how-it-works" class="btn-secondary">
+        Learn More ↓
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    padding: 160px 0 100px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212, 167, 106, 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 20% 80%, rgba(0, 208, 132, 0.04) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(232, 200, 136, 0.04) 0%, transparent 50%);
+    animation: heroShift 20s ease infinite;
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(212,167,106,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212,167,106,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 70% 50% at 50% 40%, black 30%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 40%, black 30%, transparent 70%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(212, 167, 106, 0.1);
+    border: 1px solid rgba(212, 167, 106, 0.2);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gold-light);
+    margin-bottom: 32px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .hero-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulseDot 2s ease-in-out infinite;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 8px;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(16px, 2vw, 20px);
+    color: var(--text-secondary);
+    max-width: 640px;
+    margin: 0 auto 16px;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  .hero-tagline {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-tertiary);
+    margin-bottom: 40px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+
+  .hero-orb-1 {
+    width: 300px;
+    height: 300px;
+    background: rgba(212, 167, 106, 0.06);
+    top: 10%;
+    left: -5%;
+    animation: floatOrb 15s ease-in-out infinite;
+  }
+
+  .hero-orb-2 {
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 208, 132, 0.04);
+    bottom: 10%;
+    right: -5%;
+    animation: floatOrb 20s ease-in-out infinite reverse;
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 120px 0 60px; }
+    .hero-actions { flex-direction: column; align-items: stretch; }
+  }
+</style>

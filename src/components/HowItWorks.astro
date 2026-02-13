@@ -1,0 +1,114 @@
+---
+import { flowSteps } from '../data/site-data';
+---
+
+<section id="how-it-works">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">// Multi-Agent Architecture</div>
+      <h2 class="section-title">How <span class="gradient-text">Z.A.R.A</span> Works</h2>
+      <p class="section-desc">
+        Three AI agents coordinate autonomously to monitor, decide, and execute yield strategies with ZK-verified proofs.
+      </p>
+    </div>
+
+    <div class="flow-grid">
+      <div class="flow-connector"></div>
+      {flowSteps.map((step) => (
+        <div class="flow-step">
+          <div class="flow-num">STEP {step.num}</div>
+          <span class="flow-icon">{step.icon}</span>
+          <h3 class="flow-title">{step.title}</h3>
+          <p class="flow-desc">{step.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  section { padding: 80px 0; }
+
+  .flow-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    position: relative;
+  }
+
+  .flow-connector {
+    position: absolute;
+    top: 48px;
+    left: calc(25% - 12px);
+    right: calc(25% - 12px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--green), var(--gold));
+    opacity: 0.3;
+    z-index: 0;
+  }
+
+  .flow-step {
+    background: var(--bg-surface);
+    border: 2px solid var(--border-strong);
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: 4px 4px 0px #000;
+    transition: all 0.15s ease;
+    position: relative;
+    z-index: 1;
+  }
+
+  .flow-step:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 6px 6px 0px #000;
+    border-color: rgba(212, 167, 106, 0.4);
+    background: #18181D;
+  }
+
+  .flow-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .flow-icon {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(212, 167, 106, 0.1);
+    border: 2px solid rgba(212, 167, 106, 0.3);
+    color: var(--gold-light);
+    letter-spacing: 1px;
+  }
+
+  .flow-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .flow-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 1024px) {
+    .flow-grid { grid-template-columns: repeat(2, 1fr); }
+    .flow-connector { display: none; }
+  }
+
+  @media (max-width: 640px) {
+    section { padding: 60px 0; }
+    .flow-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,113 @@
+---
+import { DASHBOARD_URL } from '../data/site-data';
+---
+
+<nav class="navbar">
+  <a href="#" class="navbar-logo">
+    <div class="logo-icon">Z</div>
+    <span class="logo-text">Z.A.R.A</span>
+    <span class="logo-version">v1.0</span>
+  </a>
+
+  <div class="navbar-links">
+    <a href="#features">Features</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#strategies">Strategies</a>
+    <a href="#agents">Agents</a>
+  </div>
+
+  <div class="navbar-right">
+    <div class="network-badge">
+      <div class="network-dot"></div>
+      BNB Chain
+    </div>
+    <a href={DASHBOARD_URL} class="btn-launch">
+      Launch App →
+    </a>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-version {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-tertiary);
+    margin-left: 8px;
+  }
+
+  .navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .navbar-links a {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 500;
+  }
+
+  .navbar-links a:hover {
+    color: white;
+  }
+
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .network-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(255, 184, 0, 0.1);
+    border: 1px solid rgba(255, 184, 0, 0.2);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--yellow);
+  }
+
+  .network-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--yellow);
+  }
+
+  @media (max-width: 1024px) {
+    .navbar-links { display: none; }
+  }
+
+  @media (max-width: 640px) {
+    .network-badge { display: none; }
+  }
+</style>

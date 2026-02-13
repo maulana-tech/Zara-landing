@@ -1,0 +1,86 @@
+---
+import { pillars } from '../data/site-data';
+---
+
+<section id="features">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">// Core Principles</div>
+      <h2 class="section-title">The <span class="gradient-text">Four Pillars</span></h2>
+      <p class="section-desc">
+        Z.A.R.A is built on four foundational principles that make autonomous yield optimization trustless and efficient.
+      </p>
+    </div>
+
+    <div class="pillars-grid">
+      {pillars.map((pillar) => (
+        <div class="pillar-card">
+          <div class="pillar-accent" style={`background: ${pillar.color};`}></div>
+          <span class="pillar-icon" style={`color: ${pillar.color};`}>{pillar.icon}</span>
+          <h3 class="pillar-title">{pillar.title}</h3>
+          <p class="pillar-desc">{pillar.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  section { padding: 80px 0; }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .pillar-card {
+    background: var(--bg-surface);
+    border: 2px solid var(--border-strong);
+    padding: 28px 24px;
+    box-shadow: 4px 4px 0px #000;
+    transition: all 0.15s ease;
+    position: relative;
+  }
+
+  .pillar-card:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 6px 6px 0px #000;
+    background: #18181D;
+  }
+
+  .pillar-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 4px;
+  }
+
+  .pillar-icon {
+    font-size: 24px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .pillar-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .pillar-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 1024px) {
+    .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    section { padding: 60px 0; }
+    .pillars-grid { grid-template-columns: 1fr; }
+  }
+</style>
