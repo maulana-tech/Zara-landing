@@ -3,591 +3,592 @@ import { DASHBOARD_URL } from '../data/site-data';
 ---
 
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-orb hero-orb-1"></div>
-  <div class="hero-orb hero-orb-2"></div>
-  <div class="hero-orb hero-orb-3"></div>
-
-  <!-- Floating particles -->
-  <div class="particles">
-    <div class="particle" style="top:15%;left:10%;animation-delay:0s;"></div>
-    <div class="particle" style="top:25%;left:85%;animation-delay:1.5s;"></div>
-    <div class="particle" style="top:65%;left:15%;animation-delay:3s;"></div>
-    <div class="particle" style="top:70%;left:90%;animation-delay:0.8s;"></div>
-    <div class="particle" style="top:40%;left:5%;animation-delay:2.2s;"></div>
-    <div class="particle" style="top:80%;left:75%;animation-delay:4s;"></div>
-    <div class="particle" style="top:10%;left:60%;animation-delay:1s;"></div>
-    <div class="particle" style="top:55%;left:92%;animation-delay:2.5s;"></div>
-  </div>
-
-  <div class="container hero-content">
-    <!-- Left-aligned text content -->
+  <div class="hero-content">
     <div class="hero-layout">
-      <div class="hero-text">
+      <!-- Left: Large main card -->
+      <div class="main-card">
         <div class="hero-badge">
-          <div class="hero-badge-dot"></div>
-          Live on BNB Chain
+          <span class="badge-text">Live on BNB Chain</span>
+          <span class="badge-arrow">→</span>
         </div>
 
-        <h1>
+        <h1 class="hero-title">
           Self-Driving<br />
           <span class="gradient-text">Yield Engine</span>
         </h1>
 
-        <p class="hero-subtitle">
-          Zero-Knowledge Machine Learning meets Multi-Agent Architecture.
-          Autonomous yield optimization that's 100% on-chain, non-custodial, and verifiable.
+        <p class="hero-desc">
+          Zero-Knowledge Machine Learning meets Multi-Agent Architecture for autonomous yield optimization.
         </p>
 
-        <p class="hero-tagline">// Powered by ZKML + Halo2 on BNB Chain</p>
+        <a href={DASHBOARD_URL} class="hero-cta">
+          Launch App
+        </a>
 
-        <div class="hero-actions">
-          <a href={DASHBOARD_URL} class="btn-launch-lg">
-            Launch App →
-          </a>
-          <a href="#how-it-works" class="btn-secondary">
-            Learn More ↓
-          </a>
-        </div>
-
-        <!-- Mini trust badges -->
-        <div class="hero-trust">
-          <div class="trust-item">
-            <span class="trust-icon">&#9670;</span>
-            Non-Custodial
+        <!-- 3D Blocks Illustration -->
+        <div class="hero-illustration">
+          <div class="blocks-container">
+            <div class="block block-1">
+              <div class="block-face front"></div>
+              <div class="block-face top"></div>
+              <div class="block-face side"></div>
+              <div class="block-icon">◆</div>
+            </div>
+            <div class="block block-2">
+              <div class="block-face front"></div>
+              <div class="block-face top"></div>
+              <div class="block-face side"></div>
+              <div class="block-icon">✓</div>
+            </div>
+            <div class="block block-3">
+              <div class="block-face front"></div>
+              <div class="block-face top"></div>
+              <div class="block-face side"></div>
+              <div class="block-icon">⚡</div>
+            </div>
+            <div class="block block-4">
+              <div class="block-face front"></div>
+              <div class="block-face top"></div>
+              <div class="block-face side"></div>
+              <div class="block-icon">◈</div>
+            </div>
           </div>
-          <div class="trust-sep"></div>
-          <div class="trust-item">
-            <span class="trust-icon">&#9670;</span>
-            ZK-Verified
-          </div>
-          <div class="trust-sep"></div>
-          <div class="trust-item">
-            <span class="trust-icon">&#9670;</span>
-            100% On-Chain
-          </div>
+          <!-- Connection lines -->
+          <svg class="connection-lines" viewBox="0 0 200 100">
+            <line x1="50" y1="50" x2="100" y2="30" stroke="#D4A76A" stroke-width="1" opacity="0.3"/>
+            <line x1="100" y1="30" x2="150" y2="50" stroke="#D4A76A" stroke-width="1" opacity="0.3"/>
+            <line x1="75" y1="70" x2="125" y2="70" stroke="#00D084" stroke-width="1" opacity="0.3"/>
+          </svg>
         </div>
       </div>
 
-      <!-- Terminal / Live Feed preview -->
-      <div class="hero-visual">
-        <div class="terminal-window">
-          <div class="terminal-header">
-            <div class="terminal-dots">
-              <span class="terminal-dot td-r"></span>
-              <span class="terminal-dot td-y"></span>
-              <span class="terminal-dot td-g"></span>
+<!-- Right: Two stacked cards -->
+      <div class="right-cards">
+        <!-- Top: Gold card with chart -->
+        <div class="hero-card card-gold">
+          <div class="chart-wrapper">
+            <div class="chart-top">
+              <div class="chart-title">
+                <span class="title-text">APY Growth</span>
+                <span class="title-badge">+18.7%</span>
+              </div>
+              <div class="chart-tabs">
+                <span class="tab active">1D</span>
+                <span class="tab">1W</span>
+                <span class="tab">1M</span>
+              </div>
             </div>
-            <span class="terminal-title">zara-agent-orchestrator</span>
-            <div class="terminal-status">
-              <div class="terminal-status-dot"></div>
-              LIVE
+            <div class="chart-visual">
+              <svg class="chart-svg" viewBox="0 0 320 120" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="areaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#D4A76A" stop-opacity="0.5"/>
+                    <stop offset="50%" stop-color="#D4A76A" stop-opacity="0.15"/>
+                    <stop offset="100%" stop-color="#D4A76A" stop-opacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#D4A76A"/>
+                    <stop offset="100%" stop-color="#E8C888"/>
+                  </linearGradient>
+                  <filter id="chartGlow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="3" result="blur"/>
+                    <feMerge>
+                      <feMergeNode in="blur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                
+                <!-- Grid -->
+                <line x1="0" y1="30" x2="320" y2="30" stroke="rgba(255,255,255,0.06)"/>
+                <line x1="0" y1="60" x2="320" y2="60" stroke="rgba(255,255,255,0.06)"/>
+                <line x1="0" y1="90" x2="320" y2="90" stroke="rgba(255,255,255,0.06)"/>
+                <line x1="0" y1="120" x2="320" y2="120" stroke="rgba(255,255,255,0.06)"/>
+                
+                <!-- Area -->
+                <path d="M0,100 L30,95 L60,85 L90,75 L120,70 L150,60 L180,50 L210,45 L240,35 L270,30 L300,25 L320,20 L320,120 L0,120 Z" fill="url(#areaGrad)"/>
+                
+                <!-- Line -->
+                <path d="M0,100 L30,95 L60,85 L90,75 L120,70 L150,60 L180,50 L210,45 L240,35 L270,30 L300,25 L320,20" fill="none" stroke="url(#lineGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#chartGlow)"/>
+                
+                <!-- Points -->
+                <circle cx="90" cy="75" r="4" fill="#D4A76A"/>
+                <circle cx="180" cy="50" r="5" fill="#D4A76A"/>
+                <circle cx="270" cy="30" r="5" fill="#D4A76A"/>
+                <circle cx="320" cy="20" r="6" fill="#E8C888" stroke="#0A0A0F" stroke-width="2"/>
+              </svg>
             </div>
-          </div>
-          <div class="terminal-body" id="terminal-body">
-            <div class="terminal-line tl-fade-1">
-              <span class="t-time">11:31:02</span>
-              <span class="t-tag t-tag-info">ORCHESTRATOR</span>
-              <span class="t-msg">Cycle #1,247 initiated</span>
-            </div>
-            <div class="terminal-line tl-fade-2">
-              <span class="t-time">11:31:03</span>
-              <span class="t-tag t-tag-blue">MARKET</span>
-              <span class="t-msg">BNB sentiment: +0.75 | Whales: Accumulating</span>
-            </div>
-            <div class="terminal-line tl-fade-3">
-              <span class="t-time">11:31:04</span>
-              <span class="t-tag t-tag-blue">MARKET</span>
-              <span class="t-msg">ZK proof generated (Halo2) ... verified</span>
-            </div>
-            <div class="terminal-line tl-fade-4">
-              <span class="t-time">11:31:05</span>
-              <span class="t-tag t-tag-yellow">RISK</span>
-              <span class="t-msg">Score: 42/100 | Hedge ratio: 65%</span>
-            </div>
-            <div class="terminal-line tl-fade-5">
-              <span class="t-time">11:31:06</span>
-              <span class="t-tag t-tag-green">EXEC</span>
-              <span class="t-msg">Rebalance: USDT → AsterDEX Earn (+ 2.3% APY)</span>
-            </div>
-            <div class="terminal-line tl-fade-6">
-              <span class="t-time">11:31:06</span>
-              <span class="t-tag t-tag-green">EXEC</span>
-              <span class="t-msg">MEV protection: applied | Gas saved: 72%</span>
-            </div>
-            <div class="terminal-line tl-fade-7">
-              <span class="t-time">11:31:07</span>
-              <span class="t-tag t-tag-info">ORCHESTRATOR</span>
-              <span class="t-msg">Cycle #1,247 complete. Next: 60s</span>
-            </div>
-            <div class="terminal-line terminal-cursor tl-fade-8">
-              <span class="t-time">11:31:08</span>
-              <span class="t-blink">_</span>
+            <div class="chart-stats-row">
+              <div class="stat-item">
+                <span class="stat-label">Today</span>
+                <span class="stat-value">18.7%</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">24h</span>
+                <span class="stat-value up">+2.3%</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">7d</span>
+                <span class="stat-value up">+8.1%</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-label">30d</span>
+                <span class="stat-value up">+24.5%</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Floating metrics around terminal -->
-        <div class="float-card fc-1">
-          <div class="fc-label">Current APY</div>
-          <div class="fc-value fc-green">18.7%</div>
-        </div>
-        <div class="float-card fc-2">
-          <div class="fc-label">Risk Score</div>
-          <div class="fc-value fc-gold">42/100</div>
-        </div>
-        <div class="float-card fc-3">
-          <div class="fc-label">TVL</div>
-          <div class="fc-value">$156.8K</div>
+        <!-- Bottom: Dark card with agents -->
+        <div class="hero-card card-dark">
+          <h3 class="card-title">Active Agents</h3>
+          <div class="agents-row">
+            <div class="agent-avatars">
+              <div class="agent-avatar-mini" style="background: linear-gradient(135deg, #D4A76A, #E8C888);">MA</div>
+              <div class="agent-avatar-mini" style="background: linear-gradient(135deg, #E8C888, #D4A76A);">RM</div>
+              <div class="agent-avatar-mini" style="background: linear-gradient(135deg, #00D084, #00B872);">EA</div>
+            </div>
+            <span class="agents-count">+3 Agents</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Background elements -->
+  <div class="bg-grid"></div>
 </section>
 
 <style>
   .hero {
     position: relative;
-    padding: 140px 0 80px;
-    overflow: hidden;
     min-height: 100vh;
     display: flex;
     align-items: center;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212, 167, 106, 0.08) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 40% at 20% 80%, rgba(0, 208, 132, 0.04) 0%, transparent 50%),
-      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(232, 200, 136, 0.04) 0%, transparent 50%);
-    animation: heroShift 20s ease infinite;
-  }
-
-  .hero-grid {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(212,167,106,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(212,167,106,0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 70% 50% at 50% 40%, black 30%, transparent 70%);
-    -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 40%, black 30%, transparent 70%);
+    padding: 120px 0 80px;
+    overflow: hidden;
   }
 
   .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 10;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  .hero-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 24px;
+    align-items: stretch;
     width: 100%;
   }
 
-  /* Two-column layout */
-  .hero-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: center;
-  }
-
-  .hero-text {
-    text-align: left;
+  /* Left: Main card */
+  .main-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-strong);
+    padding: 48px 56px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
   }
 
   .hero-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 6px 16px;
+    padding: 10px 18px;
     background: rgba(212, 167, 106, 0.1);
-    border: 1px solid rgba(212, 167, 106, 0.2);
+    border: 1px solid rgba(212, 167, 106, 0.3);
+    width: fit-content;
+    margin-bottom: 32px;
+  }
+
+  .badge-text {
+    font-family: var(--font-mono);
     font-size: 12px;
-    font-weight: 600;
-    color: var(--gold-light);
-    margin-bottom: 24px;
+    color: var(--gold);
     letter-spacing: 0.5px;
-    text-transform: uppercase;
   }
 
-  .hero-badge-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--green);
-    animation: pulseDot 2s ease-in-out infinite;
+  .badge-arrow {
+    color: var(--gold);
+    font-size: 14px;
   }
 
-  .hero h1 {
-    font-size: clamp(36px, 5vw, 64px);
+  .hero-title {
+    font-size: clamp(36px, 4vw, 56px);
     font-weight: 900;
     line-height: 1.08;
     letter-spacing: -2px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
 
-  .hero-subtitle {
-    font-size: clamp(15px, 1.5vw, 18px);
+  .hero-desc {
+    font-size: 16px;
     color: var(--text-secondary);
-    max-width: 480px;
-    margin-bottom: 12px;
+    max-width: 400px;
+    margin-bottom: 32px;
     line-height: 1.6;
-    font-weight: 400;
   }
 
-  .hero-tagline {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--text-tertiary);
-    margin-bottom: 32px;
-  }
-
-  .hero-actions {
-    display: flex;
+  .hero-cta {
+    display: inline-flex;
     align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-bottom: 32px;
+    justify-content: center;
+    padding: 14px 32px;
+    background: #000;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    width: fit-content;
+    margin-bottom: 40px;
+    transition: all 0.2s;
+    border: 1px solid var(--border-strong);
   }
 
-  /* Trust badges */
-  .hero-trust {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .trust-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    color: var(--text-tertiary);
-    font-weight: 500;
-  }
-
-  .trust-icon {
-    color: var(--gold);
-    font-size: 6px;
-  }
-
-  .trust-sep {
-    width: 1px;
-    height: 14px;
-    background: var(--border-strong);
-  }
-
-  /* Orbs */
-  .hero-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    pointer-events: none;
-  }
-
-  .hero-orb-1 {
-    width: 300px;
-    height: 300px;
-    background: rgba(212, 167, 106, 0.06);
-    top: 10%;
-    left: -5%;
-    animation: floatOrb 15s ease-in-out infinite;
-  }
-
-  .hero-orb-2 {
-    width: 200px;
-    height: 200px;
-    background: rgba(0, 208, 132, 0.04);
-    bottom: 10%;
-    right: -5%;
-    animation: floatOrb 20s ease-in-out infinite reverse;
-  }
-
-  .hero-orb-3 {
-    width: 250px;
-    height: 250px;
-    background: rgba(232, 200, 136, 0.04);
-    top: 50%;
-    left: 45%;
-    animation: floatOrb 18s ease-in-out infinite 3s;
-  }
-
-  /* Particles */
-  .particles {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .particle {
-    position: absolute;
-    width: 3px;
-    height: 3px;
+  .hero-cta:hover {
     background: var(--gold);
-    border-radius: 50%;
-    opacity: 0;
-    animation: particleDrift 6s ease-in-out infinite;
+    color: #000;
+    border-color: var(--gold);
   }
 
-  @keyframes particleDrift {
-    0% { opacity: 0; transform: translateY(0) scale(1); }
-    20% { opacity: 0.6; }
-    80% { opacity: 0.3; }
-    100% { opacity: 0; transform: translateY(-60px) scale(0.5); }
+  /* 3D Blocks Illustration */
+  .hero-illustration {
+    position: relative;
+    height: 180px;
+    margin-top: 20px;
   }
 
-  /* ===== TERMINAL ===== */
-  .hero-visual {
+  .blocks-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .block {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    transform-style: preserve-3d;
+  }
+
+  .block-1 { bottom: 20px; left: 20px; }
+  .block-2 { bottom: 50px; left: 90px; }
+  .block-3 { bottom: 10px; left: 160px; }
+  .block-4 { bottom: 60px; left: 130px; }
+
+  .block-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(212, 167, 106, 0.3);
+  }
+
+  .block-face.front {
+    background: rgba(20, 20, 24, 0.9);
+    transform: translateZ(30px);
+  }
+
+  .block-face.top {
+    background: rgba(212, 167, 106, 0.15);
+    transform: rotateX(-90deg) translateZ(30px);
+  }
+
+  .block-face.side {
+    background: rgba(212, 167, 106, 0.08);
+    transform: rotateY(90deg) translateZ(30px);
+    width: 60px;
+  }
+
+  .block-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateZ(26px);
+    font-size: 16px;
+    color: var(--gold);
+  }
+
+  .connection-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  /* Right: Stacked cards */
+  .right-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .hero-card {
+    border: 1px solid var(--border-strong);
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+  }
+
+  .card-gold {
+    background: linear-gradient(135deg, rgba(212, 167, 106, 0.2), rgba(20, 20, 24, 0.95));
+    min-height: 320px;
+    padding: 32px 36px;
+    display: flex;
+    flex-direction: column;
     position: relative;
   }
 
-  .terminal-window {
-    background: #0C0C12;
-    border: 2px solid var(--border-strong);
-    box-shadow: 8px 8px 0px #000, 0 0 60px rgba(212, 167, 106, 0.04);
-    overflow: hidden;
+  .card-badge {
+    display: none;
   }
 
-  .terminal-header {
+  .chart-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 12px;
+  }
+
+  .chart-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .chart-title {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--border);
-    background: rgba(255,255,255,0.02);
   }
 
-  .terminal-dots {
-    display: flex;
-    gap: 6px;
-  }
-
-  .terminal-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-  }
-
-  .td-r { background: #FF5F57; }
-  .td-y { background: #FEBC2E; }
-  .td-g { background: #28C840; }
-
-  .terminal-title {
-    flex: 1;
+  .title-text {
     font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--text-tertiary);
-    text-align: center;
-  }
-
-  .terminal-status {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    font-weight: 700;
-    color: var(--green);
-    letter-spacing: 1.5px;
-  }
-
-  .terminal-status-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--green);
-    animation: pulseDot 2s ease-in-out infinite;
-  }
-
-  .terminal-body {
-    padding: 16px;
-    min-height: 260px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .terminal-line {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--font-mono);
-    font-size: 11.5px;
-    line-height: 1.7;
-    opacity: 0;
-    animation: termFadeIn 0.4s ease forwards;
-  }
-
-  .tl-fade-1 { animation-delay: 0.2s; }
-  .tl-fade-2 { animation-delay: 0.6s; }
-  .tl-fade-3 { animation-delay: 1.0s; }
-  .tl-fade-4 { animation-delay: 1.5s; }
-  .tl-fade-5 { animation-delay: 2.0s; }
-  .tl-fade-6 { animation-delay: 2.4s; }
-  .tl-fade-7 { animation-delay: 3.0s; }
-  .tl-fade-8 { animation-delay: 3.5s; }
-
-  @keyframes termFadeIn {
-    0% { opacity: 0; transform: translateY(4px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-
-  .t-time {
-    color: var(--text-disabled);
-    font-size: 10px;
-    flex-shrink: 0;
-    width: 56px;
-  }
-
-  .t-tag {
-    padding: 1px 8px;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    flex-shrink: 0;
-    text-transform: uppercase;
-  }
-
-  .t-tag-info {
-    background: rgba(212, 167, 106, 0.15);
-    color: var(--gold-light);
-    border: 1px solid rgba(212, 167, 106, 0.25);
-  }
-
-  .t-tag-blue {
-    background: rgba(100, 150, 255, 0.12);
-    color: #8AB4FF;
-    border: 1px solid rgba(100, 150, 255, 0.2);
-  }
-
-  .t-tag-yellow {
-    background: rgba(255, 184, 0, 0.12);
-    color: var(--yellow);
-    border: 1px solid rgba(255, 184, 0, 0.2);
-  }
-
-  .t-tag-green {
-    background: rgba(0, 208, 132, 0.12);
-    color: var(--green);
-    border: 1px solid rgba(0, 208, 132, 0.2);
-  }
-
-  .t-msg {
-    color: var(--text-secondary);
-  }
-
-  .t-blink {
-    color: var(--gold);
-    animation: blink 1s step-end infinite;
-  }
-
-  @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
-
-  /* ===== FLOATING CARDS ===== */
-  .float-card {
-    position: absolute;
-    background: var(--bg-surface);
-    border: 2px solid var(--border-strong);
-    padding: 12px 18px;
-    box-shadow: 4px 4px 0px #000;
-    z-index: 2;
-    animation: floatCard 6s ease-in-out infinite;
-  }
-
-  .fc-label {
-    font-size: 9px;
-    font-weight: 600;
-    color: var(--text-tertiary);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 2px;
   }
 
-  .fc-value {
+  .title-badge {
+    padding: 6px 12px;
+    background: linear-gradient(135deg, #D4A76A, #E8C888);
+    color: #000;
     font-family: var(--font-mono);
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 700;
-    color: white;
   }
 
-  .fc-green { color: var(--green); }
-  .fc-gold { color: var(--gold-light); }
-
-  .fc-1 {
-    top: -16px;
-    right: -20px;
-    animation-delay: 0s;
+  .chart-tabs {
+    display: flex;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px;
   }
 
-  .fc-2 {
-    bottom: 40px;
-    left: -30px;
-    animation-delay: 2s;
+  .tab {
+    padding: 6px 12px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.2s;
   }
 
-  .fc-3 {
-    bottom: -10px;
-    right: 30px;
-    animation-delay: 4s;
+  .tab.active {
+    background: rgba(212, 167, 106, 0.2);
+    color: var(--gold);
   }
 
-  @keyframes floatCard {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+  .chart-visual {
+    flex: 1;
+    min-height: 120px;
+    position: relative;
   }
 
-  /* ===== RESPONSIVE ===== */
+  .chart-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .chart-stats-row {
+    display: flex;
+    gap: 24px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat-item .stat-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+  }
+
+  .stat-item .stat-value {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .stat-item .stat-value.up {
+    color: #00D084;
+  }
+
+  /* Old chart styles - remove
+  .chart-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 160px;
+  }
+
+  .chart-line {
+    width: 100%;
+    height: 100%;
+  }
+  */
+
+  /* Dark card */
+  .card-dark {
+    background: var(--bg-surface);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 200px;
+    padding: 36px 40px;
+  }
+
+  /* Dark card content */
+  .card-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 24px 0;
+  }
+
+  .agents-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .agent-avatars {
+    display: flex;
+  }
+
+  .agent-avatar-mini {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    color: #000;
+    margin-left: -10px;
+    border: 2px solid var(--bg-surface);
+  }
+
+  .agent-avatar-mini:first-child {
+    margin-left: 0;
+  }
+
+  .agents-count {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-secondary);
+    padding: 10px 18px;
+    border: 1px solid var(--border-strong);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Background */
+  /* Background */
+  .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(212, 167, 106, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212, 167, 106, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 70% 50% at 50% 40%, black 30%, transparent 70%);
+  }
+
+  /* Responsive */
   @media (max-width: 1024px) {
-    .hero-layout {
-      grid-template-columns: 1fr;
-      gap: 40px;
+    .hero-content {
+      padding: 0 24px;
     }
 
-    .hero-text {
+    .hero-layout {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .main-card {
+      padding: 40px;
+      align-items: center;
       text-align: center;
     }
 
-    .hero-actions {
-      justify-content: center;
+    .hero-illustration {
+      display: none;
     }
 
-    .hero-trust {
-      justify-content: center;
+    .right-cards {
+      flex-direction: row;
     }
 
-    .float-card { display: none; }
+    .hero-card {
+      flex: 1;
+    }
+
+    .hero-desc {
+      max-width: 500px;
+    }
   }
 
   @media (max-width: 640px) {
     .hero {
-      padding: 120px 0 60px;
-      min-height: auto;
+      padding: 100px 0 60px;
     }
 
-    .hero-actions {
+    .hero-content {
+      padding: 0 16px;
+    }
+
+    .main-card {
+      padding: 28px;
+    }
+
+    .right-cards {
       flex-direction: column;
-      align-items: stretch;
     }
 
-    .hero-trust {
-      flex-direction: column;
-      gap: 8px;
+    .card-gold {
+      min-height: 160px;
     }
 
-    .trust-sep { display: none; }
-
-    .terminal-body {
-      min-height: 200px;
+    .card-dark {
+      min-height: 120px;
     }
-
-    .terminal-line {
-      font-size: 10px;
-    }
-
-    .t-time { display: none; }
   }
 </style>
