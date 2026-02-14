@@ -3,70 +3,242 @@ import { pillars } from '../data/site-data';
 ---
 
 <section id="features">
-  <div class="container">
+  <div class="bento-container">
     <div class="section-header">
-      <div class="section-tag">// Core Principles</div>
+      <div class="section-tag">Core Principles</div>
       <h2 class="section-title">The <span class="gradient-text">Four Pillars</span></h2>
-      <p class="section-desc">
-        Z.A.R.A is built on four foundational principles that make autonomous yield optimization trustless and efficient.
-      </p>
     </div>
 
-    <div class="pillars-grid">
-      {pillars.map((pillar) => (
-        <div class="pillar-card">
-          <div class="pillar-accent" style={`background: ${pillar.color};`}></div>
-          <span class="pillar-icon" style={`color: ${pillar.color};`}>{pillar.icon}</span>
-          <h3 class="pillar-title">{pillar.title}</h3>
-          <p class="pillar-desc">{pillar.desc}</p>
+    <div class="bento-grid">
+      <!-- Large featured card - Integrate -->
+      <div class="bento-card bento-card-large">
+        <div class="card-glow"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="pillar-icon" style={`color: ${pillars[0].color};`}>{pillars[0].icon}</span>
+            <span class="card-badge" style={`background: ${pillars[0].color}20; color: ${pillars[0].color};`}>Primary</span>
+          </div>
+          <h3 class="pillar-title">{pillars[0].title}</h3>
+          <p class="pillar-desc">{pillars[0].desc}</p>
+          <div class="card-stats">
+            <div class="stat-item">
+              <span class="stat-value">100%</span>
+              <span class="stat-label">On-chain</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">24/7</span>
+              <span class="stat-label">Active</span>
+            </div>
+          </div>
         </div>
-      ))}
+        <div class="card-accent" style={`background: ${pillars[0].color};`}></div>
+      </div>
+
+      <!-- Medium card - Stack -->
+      <div class="bento-card bento-card-medium">
+        <div class="card-glow"></div>
+        <div class="card-content">
+          <span class="pillar-icon" style={`color: ${pillars[1].color};`}>{pillars[1].icon}</span>
+          <h3 class="pillar-title">{pillars[1].title}</h3>
+          <p class="pillar-desc">{pillars[1].desc}</p>
+        </div>
+        <div class="card-accent" style={`background: ${pillars[1].color};`}></div>
+      </div>
+
+      <!-- Medium card - Automate -->
+      <div class="bento-card bento-card-medium">
+        <div class="card-glow"></div>
+        <div class="card-content">
+          <span class="pillar-icon" style={`color: ${pillars[2].color};`}>{pillars[2].icon}</span>
+          <h3 class="pillar-title">{pillars[2].title}</h3>
+          <p class="pillar-desc">{pillars[2].desc}</p>
+        </div>
+        <div class="card-accent" style={`background: ${pillars[2].color};`}></div>
+      </div>
+
+      <!-- Wide card - Protect -->
+      <div class="bento-card bento-card-wide">
+        <div class="card-glow"></div>
+        <div class="card-content wide-content">
+          <div class="wide-left">
+            <span class="pillar-icon" style={`color: ${pillars[3].color};`}>{pillars[3].icon}</span>
+            <h3 class="pillar-title">{pillars[3].title}</h3>
+          </div>
+          <p class="pillar-desc wide-desc">{pillars[3].desc}</p>
+        </div>
+        <div class="card-accent" style={`background: ${pillars[3].color};`}></div>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  section { padding: 80px 0; }
-
-  .pillars-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-  }
-
-  .pillar-card {
-    background: var(--bg-surface);
-    border: 2px solid var(--border-strong);
-    padding: 28px 24px;
-    box-shadow: 4px 4px 0px #000;
-    transition: all 0.15s ease;
+  section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
     position: relative;
+    overflow: hidden;
   }
 
-  .pillar-card:hover {
-    transform: translate(-1px, -1px);
-    box-shadow: 6px 6px 0px #000;
-    background: #18181D;
-  }
-
-  .pillar-accent {
+  section::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
     bottom: 0;
-    width: 4px;
+    background: 
+      radial-gradient(ellipse at 20% 50%, rgba(212, 167, 106, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 50%, rgba(0, 208, 132, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .bento-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+    padding: 8px 16px;
+    background: rgba(212, 167, 106, 0.1);
+    border: 1px solid rgba(212, 167, 106, 0.3);
+    border-radius: 0 !important;
+  }
+
+  .section-title {
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+  }
+
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 240px);
+    gap: 20px;
+  }
+
+  .bento-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 0 !important;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  }
+
+  .bento-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 50%);
+    pointer-events: none;
+    border-radius: 0 !important;
+  }
+
+  .bento-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    border-color: rgba(212, 167, 106, 0.4);
+    box-shadow: 
+      0 20px 40px rgba(0, 0, 0, 0.4),
+      0 0 60px rgba(212, 167, 106, 0.1);
+  }
+
+  .bento-card-large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .bento-card-medium {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .bento-card-wide {
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+
+  .card-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212, 167, 106, 0.15) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .bento-card:hover .card-glow {
+    opacity: 1;
+  }
+
+  .card-content {
+    padding: 28px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .card-badge {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 0 !important;
+    letter-spacing: 1px;
   }
 
   .pillar-icon {
-    font-size: 24px;
-    margin-bottom: 16px;
+    font-size: 32px;
     display: block;
+    margin-bottom: 8px;
+  }
+
+  .bento-card-large .pillar-icon {
+    font-size: 44px;
   }
 
   .pillar-title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+
+  .bento-card-large .pillar-title {
+    font-size: 26px;
+    margin-bottom: 10px;
   }
 
   .pillar-desc {
@@ -75,12 +247,150 @@ import { pillars } from '../data/site-data';
     line-height: 1.5;
   }
 
+  .bento-card-large .pillar-desc {
+    font-size: 14px;
+  }
+
+  .card-stats {
+    display: flex;
+    gap: 32px;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-value {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .wide-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    padding: 24px 32px;
+  }
+
+  .wide-left {
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+    flex-shrink: 0;
+  }
+
+  .wide-left .pillar-icon {
+    margin-bottom: 8px;
+  }
+
+  .wide-desc {
+    flex: 1;
+    font-size: 14px;
+  }
+
+  .card-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    opacity: 0.8;
+  }
+
+  .bento-card-wide .card-accent {
+    right: auto;
+    bottom: 0;
+    width: 3px;
+    height: auto;
+  }
+
   @media (max-width: 1024px) {
-    .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+    .bento-grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+    }
+
+    .bento-card-large {
+      grid-column: span 2;
+      grid-row: span 1;
+      min-height: 280px;
+    }
+
+    .bento-card-medium {
+      grid-column: span 1;
+      min-height: 200px;
+    }
+
+    .bento-card-wide {
+      grid-column: span 2;
+    }
+
+    .wide-content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .wide-left {
+      min-width: auto;
+    }
   }
 
   @media (max-width: 640px) {
-    section { padding: 60px 0; }
-    .pillars-grid { grid-template-columns: 1fr; }
+    section {
+      min-height: auto;
+      padding: 60px 0;
+    }
+
+    .bento-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .bento-card-large,
+    .bento-card-medium,
+    .bento-card-wide {
+      grid-column: span 1;
+      grid-row: span 1;
+      min-height: auto;
+    }
+
+    .card-content {
+      padding: 24px;
+    }
+
+    .bento-card-large .pillar-icon {
+      font-size: 36px;
+    }
+
+    .bento-card-large .pillar-title {
+      font-size: 22px;
+    }
+
+    .card-stats {
+      gap: 24px;
+    }
+
+    .stat-value {
+      font-size: 20px;
+    }
+
+    .wide-content {
+      padding: 24px;
+    }
   }
 </style>
